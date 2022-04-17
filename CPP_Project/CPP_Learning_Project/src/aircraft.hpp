@@ -70,7 +70,7 @@ public:
     int get_fuel() const;
     bool is_low_on_fuel() const;
     bool is_on_ground() const { return pos.z() < DISTANCE_THRESHOLD; }
-    void refill(int &fuel_stock);
+    void refill(unsigned int &fuel_stock);
 
     friend class Tower;
 };

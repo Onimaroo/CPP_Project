@@ -1,5 +1,6 @@
 #include "aircraft_manager.hpp"
 #include "airport.hpp"
+#include <numeric>
 using namespace std;
 
 bool AircraftManager::move()
@@ -9,16 +10,24 @@ bool AircraftManager::move()
         assert(first != nullptr && second != nullptr);
         return (first->get_fuel() < second->get_fuel()); });
 
-    for (auto it = aircrafts.begin(); it != aircrafts.end();) // Notez bien le manque de l'incremenet ++it ici car on va incrementer it selon la réponse de move()
+    for (auto it = aircrafts.begin(); it != aircrafts.end();)
     {
-        if (!(*it)->move())
+        try
         {
-            // delete *it;               // c'est pas bien, mais necessaire parce qu'on a créé l'avion via new.... cela change dès qu'on trouve un propre owner des avions (TASK1)
-            it = aircrafts.erase(it); // ici, on enleve *it de la move_queue d'une facon safe
+            if (!(*it)->move())
+            {
+                it = aircrafts.erase(it);
+            }
+            else
+            {
+                ++it;
+            }
         }
-        else
+        catch (const AircraftCrash &crash)
         {
-            ++it;
+            it = aircrafts.erase(it);
+            crash_counter++;
+            std::cerr << "Error: " << crash.what() << std::endl;
         }
     }
     return true;
@@ -27,16 +36,27 @@ bool AircraftManager::move()
 void AircraftManager::create_aircraft(std::unique_ptr<Aircraft> aircraft)
 {
     aircrafts.push_back(std::move(aircraft));
+    std::cout << "List of Aircrafts:" << std::endl;
+    for (auto it = aircrafts.begin(); it != aircrafts.end();)
+    {
+        std::cout << "Aircraft " << (*it)->get_flight_num() << " with " << (*it)->get_fuel() << std::endl;
+        it++;
+    }
 }
 
-int AircraftManager::get_required_fuel()
+unsigned int AircraftManager::get_required_fuel() const
 {
     int sum = 0;
     for (auto it = aircrafts.begin(); it != aircrafts.end();)
     {
+        assert((*it) != nullptr);
         if ((*it)->is_low_on_fuel() && (*it)->is_on_ground())
         {
             sum += (3000 - (*it)->get_fuel());
+        }
+        else
+        {
+            it++;
         }
     }
     return sum;

@@ -11,6 +11,7 @@
 #include "tower.hpp"
 #include "aircraft_manager.hpp"
 #include <algorithm>
+#include <numeric>
 
 #include <vector>
 
@@ -22,10 +23,10 @@ private:
     const GL::Texture2D texture;
     std::vector<Terminal> terminals;
     Tower tower;
-    int fuel_stock = 0;
-    int ordered_fuel = 0;
-    int next_refill_time = 0;
-    AircraftManager aircraft_manager;
+    unsigned int fuel_stock = 0;
+    unsigned int ordered_fuel = 0;
+    unsigned int next_refill_time = 0;
+    const AircraftManager &aircraft_manager;
 
     // reserve a terminal
     // if a terminal is free, return
@@ -58,12 +59,13 @@ private:
     Terminal &get_terminal(const size_t terminal_num) { return terminals.at(terminal_num); }
 
 public:
-    Airport(const AirportType &type_, const Point3D &pos_, const img::Image *image, const float z_ = 1.0f) : GL::Displayable{z_},
-                                                                                                             type{type_},
-                                                                                                             pos{pos_},
-                                                                                                             texture{image},
-                                                                                                             terminals{type.create_terminals()},
-                                                                                                             tower{*this}
+    Airport(const AirportType &type_, const Point3D &pos_, const img::Image *image, const AircraftManager &aircraftManager, const float z_ = 1.0f) : GL::Displayable{z_},
+                                                                                                                                                     type{type_},
+                                                                                                                                                     pos{pos_},
+                                                                                                                                                     texture{image},
+                                                                                                                                                     terminals{type.create_terminals()},
+                                                                                                                                                     tower{*this},
+                                                                                                                                                     aircraft_manager{aircraftManager}
     {
     }
 
@@ -76,9 +78,10 @@ public:
         if (next_refill_time == 0)
         {
             fuel_stock += ordered_fuel;
-            ordered_fuel = std::min(aircraft_manager.get_required_fuel(), 5000);
-            std::cout << "fuel stock : " << fuel_stock << " ordered fuel : " << ordered_fuel << std::endl;
+            ordered_fuel = std::min(aircraft_manager.get_required_fuel(), 5000u);
             next_refill_time = 100;
+            std::cout << "Stocked fuel: " << fuel_stock << std::endl;
+            std::cout << "New fuel quantity: " << ordered_fuel << std::endl;
         }
         else
         {
@@ -86,10 +89,9 @@ public:
         }
         for (auto &t : terminals)
         {
-            t.move();
+            t.move(fuel_stock);
         }
         return true;
     }
-
     friend class Tower;
 };

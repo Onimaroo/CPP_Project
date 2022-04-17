@@ -402,4 +402,7 @@ CMakeFiles/tower.dir/src/tower.cpp.obj: \
  C:\Users\bendi\Desktop\C++\CPP_Project\CPP_Learning_Project\src\terminal.hpp \
  C:\Users\bendi\Desktop\C++\CPP_Project\CPP_Learning_Project\src\aircraft.hpp \
  C:\Users\bendi\Desktop\C++\CPP_Project\CPP_Learning_Project\src\aircraft_types.hpp \
- C:\Users\bendi\Desktop\C++\CPP_Project\CPP_Learning_Project\src\aircraft_manager.hpp
+ C:\Users\bendi\Desktop\C++\CPP_Project\CPP_Learning_Project\src\aircraft_manager.hpp \
+ C:/msys64/mingw64/include/c++/11.2.0/numeric \
+ C:/msys64/mingw64/include/c++/11.2.0/bits/stl_numeric.h \
+ C:/msys64/mingw64/include/c++/11.2.0/pstl/glue_numeric_defs.h

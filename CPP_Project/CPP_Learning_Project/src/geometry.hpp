@@ -8,46 +8,46 @@
 
 struct Point2D
 {
-    float values[2] {};
+    float values[2]{};
 
     Point2D() {}
-    Point2D(float x, float y) : values { x, y } {}
+    Point2D(float x, float y) : values{x, y} {}
 
-    float& x() { return values[0]; }
+    float &x() { return values[0]; }
     float x() const { return values[0]; }
 
-    float& y() { return values[1]; }
+    float &y() { return values[1]; }
     float y() const { return values[1]; }
 
-    Point2D& operator+=(const Point2D& other)
+    Point2D &operator+=(const Point2D &other)
     {
         x() += other.x();
         y() += other.y();
         return *this;
     }
 
-    Point2D& operator*=(const Point2D& other)
+    Point2D &operator*=(const Point2D &other)
     {
         x() *= other.x();
         y() *= other.y();
         return *this;
     }
 
-    Point2D& operator*=(const float scalar)
+    Point2D &operator*=(const float scalar)
     {
         x() *= scalar;
         y() *= scalar;
         return *this;
     }
 
-    Point2D operator+(const Point2D& other) const
+    Point2D operator+(const Point2D &other) const
     {
         Point2D result = *this;
         result += other;
         return result;
     }
 
-    Point2D operator*(const Point2D& other) const
+    Point2D operator*(const Point2D &other) const
     {
         Point2D result = *this;
         result *= other;
@@ -64,21 +64,21 @@ struct Point2D
 
 struct Point3D
 {
-    float values[3] {};
+    float values[3]{};
 
     Point3D() {}
-    Point3D(float x, float y, float z) : values { x, y, z } {}
+    Point3D(float x, float y, float z) : values{x, y, z} {}
 
-    float& x() { return values[0]; }
+    float &x() { return values[0]; }
     float x() const { return values[0]; }
 
-    float& y() { return values[1]; }
+    float &y() { return values[1]; }
     float y() const { return values[1]; }
 
-    float& z() { return values[2]; }
+    float &z() { return values[2]; }
     float z() const { return values[2]; }
 
-    Point3D& operator+=(const Point3D& other)
+    Point3D &operator+=(const Point3D &other)
     {
         x() += other.x();
         y() += other.y();
@@ -86,7 +86,7 @@ struct Point3D
         return *this;
     }
 
-    Point3D& operator-=(const Point3D& other)
+    Point3D &operator-=(const Point3D &other)
     {
         x() -= other.x();
         y() -= other.y();
@@ -94,7 +94,7 @@ struct Point3D
         return *this;
     }
 
-    Point3D& operator*=(const float scalar)
+    Point3D &operator*=(const float scalar)
     {
         x() *= scalar;
         y() *= scalar;
@@ -102,14 +102,14 @@ struct Point3D
         return *this;
     }
 
-    Point3D operator+(const Point3D& other) const
+    Point3D operator+(const Point3D &other) const
     {
         Point3D result = *this;
         result += other;
         return result;
     }
 
-    Point3D operator-(const Point3D& other) const
+    Point3D operator-(const Point3D &other) const
     {
         Point3D result = *this;
         result -= other;
@@ -123,13 +123,13 @@ struct Point3D
         return result;
     }
 
-    Point3D operator-() const { return Point3D { -x(), -y(), -z() }; }
+    Point3D operator-() const { return Point3D{-x(), -y(), -z()}; }
 
     float length() const { return std::sqrt(x() * x() + y() * y() + z() * z()); }
 
-    float distance_to(const Point3D& other) const { return (*this - other).length(); }
+    float distance_to(const Point3D &other) const { return (*this - other).length(); }
 
-    Point3D& normalize(const float target_len = 1.0f)
+    Point3D &normalize(const float target_len = 1.0f)
     {
         const float current_len = length();
         if (current_len == 0)
@@ -141,7 +141,7 @@ struct Point3D
         return *this;
     }
 
-    Point3D& cap_length(const float max_len)
+    Point3D &cap_length(const float max_len)
     {
         assert(max_len > 0);
 
@@ -158,7 +158,7 @@ struct Point3D
 // our 3D-coordinate system will be tied to the airport: the runway is parallel to the x-axis, the z-axis
 // points towards the sky, and y is perpendicular to both thus,
 // {1,0,0} --> {.5,.5}   {0,1,0} --> {-.5,.5}   {0,0,1} --> {0,1}
-inline Point2D project_2D(const Point3D& p)
+inline Point2D project_2D(const Point3D &p)
 {
-    return { .5f * p.x() - .5f * p.y(), .5f * p.x() + .5f * p.y() + p.z() };
+    return {.5f * p.x() - .5f * p.y(), .5f * p.x() + .5f * p.y() + p.z()};
 }

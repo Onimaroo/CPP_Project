@@ -97,7 +97,7 @@ bool Aircraft::move()
 {
     if (fuel <= 0)
     {
-        std::cout << "L'avion " << flight_number << " a crash." << std::endl;
+        throw AircraftCrash{flight_number + " crashed because he was out of fuel "};
         return false;
     }
     if (waypoints.empty())
@@ -114,18 +114,6 @@ bool Aircraft::move()
         turn_to_waypoint();
         // move in the direction of the current speed
         pos += speed;
-
-        /*
-        if (is_circling() && !en_plein_service)
-        {
-            if (fuel > 100)
-            {
-                auto reserve_term = control.reserve_terminal(*this);
-                if (!reserve_term.empty())
-                    waypoints = std::move(reserve_term);
-            }
-        }
-        */
 
         // if we are close to our next waypoint, take it off the list
         if (!waypoints.empty() && distance_to(waypoints.front()) < DISTANCE_THRESHOLD)
@@ -173,7 +161,7 @@ void Aircraft::display() const
 
 bool Aircraft::has_terminal() const
 {
-    return waypoints.back().is_at_terminal();
+    return control.get_reserved_terminal().find(this) != control.get_reserved_terminal().end();
 }
 
 bool Aircraft::is_circling() const
@@ -186,14 +174,16 @@ bool Aircraft::is_low_on_fuel() const
     return fuel < 200;
 }
 
-void Aircraft::refill(int &fuel_stock)
+void Aircraft::refill(unsigned int &fuel_stock)
 {
-    int pre_fuel = fuel;
-    fuel += fuel_stock;
-    fuel_stock -= pre_fuel;
-    if (fuel_stock < 0)
+    fuel += (3000 - fuel);
+    if (fuel_stock < (3000u - fuel))
     {
         fuel_stock = 0;
     }
-    std::cout << "The plane " << flight_number << " has been filled with " << fuel_stock << std::endl;
+    else
+    {
+        fuel_stock -= (3000 - fuel);
+    }
+    std::cout << "The plane " << flight_number << " has been filled with " << 3000 - fuel << " fuel." << std::endl;
 }

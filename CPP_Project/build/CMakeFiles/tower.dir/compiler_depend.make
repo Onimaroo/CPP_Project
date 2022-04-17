@@ -1191,7 +1191,10 @@ CMakeFiles/tower.dir/src/aircraft_factory.cpp.obj: C:/Users/bendi/Desktop/C++/CP
   C:/msys64/mingw64/include/c++/11.2.0/map \
   C:/msys64/mingw64/include/c++/11.2.0/bits/stl_map.h \
   C:/msys64/mingw64/include/c++/11.2.0/bits/stl_multimap.h \
-  C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/aircraft_manager.hpp
+  C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/aircraft_manager.hpp \
+  C:/msys64/mingw64/include/c++/11.2.0/numeric \
+  C:/msys64/mingw64/include/c++/11.2.0/bits/stl_numeric.h \
+  C:/msys64/mingw64/include/c++/11.2.0/pstl/glue_numeric_defs.h
 
 CMakeFiles/tower.dir/src/aircraft_manager.cpp.obj: C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/aircraft_manager.cpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/aircraft_manager.hpp \
@@ -1596,7 +1599,10 @@ CMakeFiles/tower.dir/src/aircraft_manager.cpp.obj: C:/Users/bendi/Desktop/C++/CP
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/airport.hpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/airport_type.hpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/runway.hpp \
-  C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/terminal.hpp
+  C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/terminal.hpp \
+  C:/msys64/mingw64/include/c++/11.2.0/numeric \
+  C:/msys64/mingw64/include/c++/11.2.0/bits/stl_numeric.h \
+  C:/msys64/mingw64/include/c++/11.2.0/pstl/glue_numeric_defs.h
 
 CMakeFiles/tower.dir/src/img/image.cpp.obj: C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/img/image.cpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/img/image.hpp \
@@ -2153,7 +2159,10 @@ CMakeFiles/tower.dir/src/main.cpp.obj: C:/Users/bendi/Desktop/C++/CPP_Project/CP
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/airport.hpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/airport_type.hpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/runway.hpp \
-  C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/terminal.hpp
+  C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/terminal.hpp \
+  C:/msys64/mingw64/include/c++/11.2.0/numeric \
+  C:/msys64/mingw64/include/c++/11.2.0/bits/stl_numeric.h \
+  C:/msys64/mingw64/include/c++/11.2.0/pstl/glue_numeric_defs.h
 
 CMakeFiles/tower.dir/src/tower.cpp.obj: C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/tower.cpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/tower.hpp \
@@ -2558,7 +2567,10 @@ CMakeFiles/tower.dir/src/tower.cpp.obj: C:/Users/bendi/Desktop/C++/CPP_Project/C
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/terminal.hpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/aircraft.hpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/aircraft_types.hpp \
-  C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/aircraft_manager.hpp
+  C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/aircraft_manager.hpp \
+  C:/msys64/mingw64/include/c++/11.2.0/numeric \
+  C:/msys64/mingw64/include/c++/11.2.0/bits/stl_numeric.h \
+  C:/msys64/mingw64/include/c++/11.2.0/pstl/glue_numeric_defs.h
 
 CMakeFiles/tower.dir/src/tower_sim.cpp.obj: C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/tower_sim.cpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/tower_sim.hpp \
@@ -2966,6 +2978,9 @@ CMakeFiles/tower.dir/src/tower_sim.cpp.obj: C:/Users/bendi/Desktop/C++/CPP_Proje
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/airport_type.hpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/runway.hpp \
   C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/terminal.hpp \
+  C:/msys64/mingw64/include/c++/11.2.0/numeric \
+  C:/msys64/mingw64/include/c++/11.2.0/bits/stl_numeric.h \
+  C:/msys64/mingw64/include/c++/11.2.0/pstl/glue_numeric_defs.h \
   C:/msys64/mingw64/include/c++/11.2.0/ctime
 
 
@@ -3338,6 +3353,8 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h:
 C:/msys64/mingw64/x86_64-w64-mingw32/include/malloc.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h:
+
+C:/msys64/mingw64/include/c++/11.2.0/pstl/glue_numeric_defs.h:
 
 C:/msys64/mingw64/x86_64-w64-mingw32/include/realtimeapiset.h:
 
@@ -3782,6 +3799,10 @@ C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/airport_type.hpp
 C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/runway.hpp:
 
 C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/aircraft_manager.hpp:
+
+C:/msys64/mingw64/include/c++/11.2.0/numeric:
+
+C:/msys64/mingw64/include/c++/11.2.0/bits/stl_numeric.h:
 
 C:/Users/bendi/Desktop/C++/CPP_Project/CPP_Learning_Project/src/img/image.cpp:
 

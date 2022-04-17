@@ -51,6 +51,7 @@
         "xlocinfo": "cpp",
         "xlocnum": "cpp",
         "xstddef": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "numeric": "cpp"
     }
 }
