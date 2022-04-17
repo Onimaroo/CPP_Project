@@ -35,11 +35,11 @@ Pour chacune d'entre elle, expliquez ce qu'elle représente et son rôle dans le
 
 > Airport -> Designe l'aéroport.
 
-> AirportType -> Designe le type d'aéroport. Elle gère l'atterrissage ainsi que la prise d'envol des avions.
+> AirportType -> Designe le type d'aéroport. Elle a été crée pour les différencier entre eux.
 
-> Terminal -> Désigne le point d'atterrissage.
+> Terminal -> Désigne un des terminaux de l'aéroport.
 
-> Tower -> Fait la vérification des terminaux réservées.
+> Tower -> Désigne une tour qui se charge de l'entretien des avions.
 
 > TowerSimulation -> Fait la simulation, tel que créer des avions, gérer les évènements, etc.
 

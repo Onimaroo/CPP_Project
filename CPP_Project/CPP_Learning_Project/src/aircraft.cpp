@@ -176,14 +176,14 @@ bool Aircraft::is_low_on_fuel() const
 
 void Aircraft::refill(unsigned int &fuel_stock)
 {
-    fuel += (3000 - fuel);
+    fuel += (3000u - fuel);
     if (fuel_stock < (3000u - fuel))
     {
         fuel_stock = 0;
     }
     else
     {
-        fuel_stock -= (3000 - fuel);
+        fuel_stock -= (3000u - fuel);
     }
     std::cout << "The plane " << flight_number << " has been filled with " << 3000 - fuel << " fuel." << std::endl;
 }

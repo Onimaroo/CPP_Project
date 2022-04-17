@@ -5,10 +5,10 @@ using namespace std;
 
 bool AircraftManager::move()
 {
-    sort(aircrafts.begin(), aircrafts.end(), [](const std::unique_ptr<Aircraft> &first, const std::unique_ptr<Aircraft> &second)
+    sort(aircrafts.begin(), aircrafts.end(), [](const std::unique_ptr<Aircraft> &airplane_1, const std::unique_ptr<Aircraft> &airplane_2)
          {
-        assert(first != nullptr && second != nullptr);
-        return (first->get_fuel() < second->get_fuel()); });
+        assert(airplane_1 != nullptr && airplane_2 != nullptr);
+        return (airplane_1->get_fuel() < airplane_2->get_fuel()); });
 
     for (auto it = aircrafts.begin(); it != aircrafts.end();)
     {
@@ -35,6 +35,7 @@ bool AircraftManager::move()
 
 void AircraftManager::create_aircraft(std::unique_ptr<Aircraft> aircraft)
 {
+    std::cout << "Added aircraft " << aircraft->get_flight_num() << " with " << aircraft->get_fuel() << std::endl;
     aircrafts.push_back(std::move(aircraft));
     std::cout << "List of Aircrafts:" << std::endl;
     for (auto it = aircrafts.begin(); it != aircrafts.end();)
